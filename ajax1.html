@@ -15,12 +15,22 @@
 
         
         function loadText() {
-            console.log('button clicked');
+            
+            /* XHR METHOD STEPS: OPEN, ONLOAD, SEND*/
             var xhr = new XMLHttpRequest(); //crate XHR Object
 
             //Open - type, url/file,  async
             console.log(xhr);
- 
+            xhr.open('GET', 'sample.txt', true);
+
+            //Onload
+            xhr.onload = function(){
+                if(this.status == 200){
+                    console.log(this.responseText);
+                }
+            }
+            //send request
+            xhr.send();
         }
 
     </script>
