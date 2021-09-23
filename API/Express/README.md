@@ -18,8 +18,8 @@ app.get('/', (req, res) => res.send('HELLO WORLD'));
 
 //Listen on port
 app.listen(5000);
-
 ```js
+
 ## Express Middleware 
 
 Middleware functions are functions that have access to the request and response object. Express has built in middleware but middleware also comes from 3rd party packages as well as custom middleware.
