@@ -30,8 +30,10 @@ router.post("/", (req, res) => {
   }
 
   members.push(newMember);
-  //response with new member array (NOT IN TEMPLATE - JUST RAW JSON)
-  //res.json(members); 
+  // //response with new member array (NOT IN TEMPLATE - JUST RAW JSON)
+  // res.json(members); 
+
+  // redirects updated member list to template
   res.redirect('/');
 
 });
