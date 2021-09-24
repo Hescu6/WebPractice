@@ -1,12 +1,10 @@
 # Practice Expressjs framework
 
-    Run node index
-
     Use Postman to test endpoints
 
 ## Basic Server Syntax
 
-```
+```js
 //import express (NOT 'import from ..' syntax, es5 only)
 const express = require('express');
 
@@ -18,7 +16,7 @@ app.get('/', (req, res) => res.send('HELLO WORLD'));
 
 //Listen on port
 app.listen(5000);
-```js
+```
 
 ## Express Middleware 
 
@@ -31,5 +29,8 @@ Middleware functions are functions that have access to the request and response 
 
 ## Usage
 
-    node index.js
- 
+### Run during development (watches chages without having to restart server)
+    npm run dev
+
+### Run with node (restart server every time you edit code)
+    npm run start
