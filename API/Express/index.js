@@ -1,8 +1,7 @@
 const express = require("express");
 const path = require("path");
-const moment = require("moment");
-const logger = require('.middleware/logger');
-const members = require("./Members");
+const logger = require("./middleware/logger");
+
 const app = express();
 
 // // manually set every route (not ideal)
@@ -11,16 +10,19 @@ const app = express();
 //     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // })
 
-
-
 // init middleware
 app.use(logger);
 
-//get all members in Members.js
-app.get("/api/members", (req, res) => res.json(members));
+//Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 
 // Set static folder (best way)
 app.use(express.static(path.join(__dirname, "public")));
+
+//members API route
+app.use('/api/members', require('./routes/api/members'));
 
 const PORT = process.env.PORTEXERCISE || 5000;
 
